@@ -12,9 +12,9 @@ export const CategoryList = () => {
         header: "ID",
       },
       {
-        id: "title",
-        accessorKey: "title",
-        header: "Title",
+        id: "category_name",
+        accessorKey: "category_name",
+        header: "category_name",
       },
       {
         id: "actions",

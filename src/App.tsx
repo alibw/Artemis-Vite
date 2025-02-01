@@ -74,18 +74,7 @@ function App() {
             }}
           >
             <Routes>
-              <Route
-                element={
-                  <Authenticated
-                    key="authenticated-inner"
-                    fallback={<CatchAllNavigate to="/login" />}
-                  >
-                    <Layout>
-                      <Outlet />
-                    </Layout>
-                  </Authenticated>
-                }
-              >
+              <Route>
                 <Route
                   index
                   element={<NavigateToResource resource="blog_posts" />}
@@ -114,31 +103,6 @@ function App() {
                   </Authenticated>
                 }
               >
-                <Route
-                  path="/login"
-                  element={
-                    <AuthPage
-                      type="login"
-                      renderContent={(content) => (
-                        <div>
-                          <p
-                            style={{
-                              padding: 10,
-                              color: "#004085",
-                              backgroundColor: "#cce5ff",
-                              borderColor: "#b8daff",
-                              textAlign: "center",
-                            }}
-                          >
-                            email: info@refine.dev
-                            <br /> password: refine-supabase
-                          </p>
-                          {content}
-                        </div>
-                      )}
-                    />
-                  }
-                />
                 <Route
                   path="/register"
                   element={<AuthPage type="register" />}
